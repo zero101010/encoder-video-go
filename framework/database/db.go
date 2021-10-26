@@ -34,7 +34,7 @@ func NewDbTest() *gorm.DB {
 	dbInstance.Debug = true
 	connection, err := dbInstance.Connect()
 	if err != nil {
-		log.Fatal("Test db Error: %v", err)
+		log.Fatalf("Test db error: %v", err)
 	}
 	return connection
 }
@@ -58,7 +58,7 @@ func (d *Database) Connect() (*gorm.DB, error) {
 	}
 	if d.AutoMigrate {
 		d.Db.AutoMigrate(&domain.Video{}, &domain.Job{})
-		d.Db.Model(domain.Job{}).AddForeignKey("video_id", "videos(id)", "CASCADE", "CASCADE")
+		d.Db.Model(domain.Job{}).AddForeignKey("video_id", "videos (id)", "CASCADE", "CASCADE")
 	}
 	return d.Db, nil
 }

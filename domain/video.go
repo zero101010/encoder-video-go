@@ -20,6 +20,7 @@ func init() {
 	govalidator.SetFieldsRequiredByDefault(true)
 }
 
+// Inicializa um objeto Video
 func NewVideo() *Video {
 	return &Video{}
 }
