@@ -1,9 +1,0 @@
-stages:
-  - install
-  - test
-  - release
-  - deploy
-install:
-  stage: install
-  script:
-    - echo install
